@@ -4,6 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'trio-fi-events',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    firebase: 'https://trio-fi-events.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
