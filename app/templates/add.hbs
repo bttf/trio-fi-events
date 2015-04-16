@@ -1,0 +1,24 @@
+{{add-event-toolbar event=newEvent add='addEvent'}}
+
+{{#each event in model}}
+<div class="row">
+  <div class="col-sm-3">
+    {{event.date}}
+  </div>
+  <div class="col-sm-3">
+    {{event.artists}}
+  </div>
+  <div class="col-sm-3">
+    {{event.venue}}
+  </div>
+  <div class="col-sm-3">
+    {{event.city}}
+  </div>
+</div>
+{{/each}}
+
+{{#if error}}
+  <span class='text-danger'>{{error}}</span>
+{{/if}}
+
+{{outlet}}
