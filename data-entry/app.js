@@ -35,7 +35,7 @@ fs.readFile('data.txt', function(err, data) {
     });
   });
 
-  fs.writeFile('data.json', JSON.stringify(events, null, 2), function(err) {
+  fs.writeFile('data.json', JSON.stringify({events: events}, null, 2), function(err) {
     if (!err) {
       console.log("'data.json' written");
     }
