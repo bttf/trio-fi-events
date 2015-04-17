@@ -1,0 +1,8 @@
+{{#each event in events}}
+<div class="row">
+  <div class="col-sm-3">{{moment event.date}}</div>
+  <div class="col-sm-3">{{event.artists}}</div>
+  <div class="col-sm-3">{{event.venue}}</div>
+  <div class="col-sm-3">{{event.city}}</div>
+</div>
+{{/each}}

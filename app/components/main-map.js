@@ -11,7 +11,8 @@ export default Ember.Component.extend({
       if (status == google.maps.GeocoderStatus.OK) {
         var mapOptions = {
           zoom: 6,
-          center: results[0].geometry.location
+          center: results[0].geometry.location,
+          disableDefaultUI: true
         };
         self.set('map', new google.maps.Map(document.getElementById('mainMap'), mapOptions));
       } else {
