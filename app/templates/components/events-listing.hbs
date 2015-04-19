@@ -1,7 +1,11 @@
 {{#each event in events}}
 <div class="row">
-  <div class="col-sm-3">{{moment event.date}}</div>
-  <div class="col-sm-3">{{event.artists}}</div>
+  <div class="col-sm-2">
+    {{#link-to 'date' event.dateSlug}}
+    {{moment event.date 'L'}}
+    {{/link-to}}
+  </div>
+  <div class="col-sm-4">{{event.artists}}</div>
   <div class="col-sm-3">{{event.venue}}</div>
   <div class="col-sm-3">{{event.city}}</div>
 </div>
