@@ -7,8 +7,9 @@ export default DS.Model.extend({
   artists: attr('string'),
   venue: attr('string'),
   city: attr('string'),
-
-  dateSlug: function() {
-    return moment(this.get('date')).format('L').replace(/\//g, '-');
-  }.property('date')
+  dateSlug: attr('string', {
+    defaultValue: function(self) {
+      return moment(self.get('date')).format('L').replace(/\//g, '-');
+    }
+  })
 });
