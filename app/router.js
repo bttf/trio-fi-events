@@ -7,4 +7,5 @@ var Router = Ember.Router.extend({
 
 export default Router.map(function() {
   this.route('add');
+  this.route('date', { path: '/date/:dateSlug' });
 });

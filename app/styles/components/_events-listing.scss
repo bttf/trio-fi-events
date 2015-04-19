@@ -1,0 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+
+.events-listing {
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+
+  .row {
+    padding: 1em;
+    border-bottom: 1px #CCC solid;
+  }
+
+  .row:hover {
+    background-color: rgba(225, 225, 225, 0.3);
+  }
+}
