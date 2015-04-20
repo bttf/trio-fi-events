@@ -1,3 +1,7 @@
 @import 'components/_main-map';
 @import 'components/_add-event-toolbar';
 @import 'components/_events-listing.scss';
+
+body {
+  padding-top: 325px;
+}

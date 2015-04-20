@@ -1,5 +1,13 @@
-#mainMap {
+.main-map-wrapper {
   height: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   box-shadow: 0 10px 10px rgba(51, 51, 51, 0.1);
-  margin-bottom: 2em;
+  z-index: 1;
+}
+
+#mainMap {
+  height: 100%;
 }

@@ -1,5 +1,17 @@
 <div class="container">
+  <ul class="list-inline">
+    <li>
+
+      {{#link-to 'index'}}
+      {{fa-icon "home"}} Home
+      {{/link-to}}
+
+    </li>
+  </ul>
+
   <h1>{{model.thisDate}}</h1>
+
   {{events-listing events=model.events}}
+
 </div>
 {{outlet}}
