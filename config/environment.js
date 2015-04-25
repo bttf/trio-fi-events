@@ -16,7 +16,7 @@ module.exports = function(environment) {
     },
 
     APP: {
-      pageLimit: 10
+      pageLimit: 20
     }
   };
 

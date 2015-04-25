@@ -5,10 +5,17 @@ var limit = ENV.APP.pageLimit;
 
 export default Ember.Route.extend({
   model: function() {
-    return this.store.find('event', {
-      orderBy: 'date'
-    }).then(function(events) {
-      return events.slice(0, limit);
+    return Ember.RSVP.hash({
+      page: 0,
+      limit: limit,
+      eventsLength: this.store.find('event').then(function(events) {
+        return events.get('length');
+      }),
+      events: this.store.find('event', {
+        orderBy: 'date'
+      }).then(function(events) {
+        return events.slice(0, limit);
+      })
     });
   }
 });

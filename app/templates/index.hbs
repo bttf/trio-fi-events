@@ -1,5 +1,5 @@
 <div class="container">
-  {{event-filter-form}}
+  {{event-filter-form eventsLength=model.eventsLength currentPage=model.page limit=model.limit}}
 
-  {{events-listing events=model}}
+  {{events-listing events=model.events}}
 </div>

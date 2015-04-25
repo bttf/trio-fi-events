@@ -1,1 +1,18 @@
-{{yield}}
+<div class="event-filter-form">
+  <div class="container">
+    <form action=""></form>
+    <div class="paginator">
+      <ul class="list-inline">
+        {{#each page in pages}}
+        <li>
+          {{#unless page.active}}
+          {{#link-to 'page' page.num}}{{page.num}}{{/link-to}}
+          {{else}}
+          {{page.num}}
+          {{/unless}}
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
