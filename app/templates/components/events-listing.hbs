@@ -10,7 +10,11 @@
     {{/link-to}}
 
   </div>
-  <div class="col-sm-4">{{event.artists}}</div>
+  <div class="col-sm-4">
+    {{#link-to 'event' event}}
+    {{event.artists}}
+    {{/link-to}}
+  </div>
   <div class="col-sm-3">{{event.venue}}</div>
   <div class="col-sm-3">{{event.city}}</div>
 </div>
