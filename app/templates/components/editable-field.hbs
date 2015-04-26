@@ -1,0 +1,14 @@
+<div class='editable-field'>
+  <span id='valWrapper'>
+    {{#if isEditable}}
+    {{input type="text" value=value}}
+    {{else}}
+    {{value}}
+    {{/if}}
+  </span>
+  {{#if isEditable}}
+  <a class='edit-toggle' href='#' {{action 'toggleEdit'}}>{{fa-icon 'floppy-o'}}</a>
+  {{else}}
+  <a class='edit-toggle' href='#' {{action 'toggleEdit'}}>{{fa-icon 'pencil'}}</a>
+  {{/if}}
+</div>
