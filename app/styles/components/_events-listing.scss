@@ -11,5 +11,12 @@
 
   .row:hover {
     background-color: rgba(225, 225, 225, 0.3);
+    .edit-wrapper a {
+      color: $anchorColor;
+    }
+  }
+
+  .edit-wrapper a {
+    color: #EFEFEF;
   }
 }
