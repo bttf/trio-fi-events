@@ -3,8 +3,17 @@
   {{fa-icon "home"}} Home
   {{/link-to}}
 
-  <h1>{{editable-field value=model.artists}}</h1>
+  <div class="row">
+    <div class="col-sm-8">
+      <h1>{{editable-field value=model.artists}}</h1>
 
-  <h2>{{editable-field value=model.venue}}</h2>
-  <h3>{{editable-field value=model.city}}</h3>
+      <h2>{{editable-field value=model.venue}}</h2>
+      <h3>{{editable-field value=model.city}}</h3>
+
+    </div>
+    <div class="col-sm-4">
+      {{mini-map venue=model.venue city=model.city}}
+    </div>
+  </div>
+
 </div>

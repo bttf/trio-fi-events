@@ -1,0 +1,14 @@
+<div id="miniMap"></div>
+<div class="form-wrapper">
+  <form action="">
+    <div class='form-group'>
+      <label for="venueInput">Venue</label>
+      {{input id='venueInput' class='form-control' type='text' value=venue placeholder='venue'}}
+    </div>
+    <div class='form-group'>
+      <label for="cityInput">City</label>
+      {{input id='cityInput' class='form-control' type='text' value=city placeholder='city'}}
+    </div>
+    <button type='hidden' {{action 'updateMap'}}></button>
+  </form>
+</div>
