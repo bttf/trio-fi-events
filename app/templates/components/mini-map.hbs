@@ -3,12 +3,14 @@
   <form action="">
     <div class='form-group'>
       <label for="venueInput">Venue</label>
-      {{input id='venueInput' class='form-control' type='text' value=venue placeholder='venue'}}
+      {{input id='venueInput' class='form-control' type='text' value=proxyVenue placeholder='venue'}}
     </div>
+
     <div class='form-group'>
       <label for="cityInput">City</label>
-      {{input id='cityInput' class='form-control' type='text' value=city placeholder='city'}}
+      {{input id='cityInput' class='form-control' type='text' value=proxyCity placeholder='city'}}
     </div>
+
     <button type='hidden' {{action 'updateMap'}}></button>
   </form>
 </div>

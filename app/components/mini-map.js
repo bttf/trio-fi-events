@@ -7,6 +7,12 @@ export default Ember.Component.extend({
   map: {},
   bounds: new google.maps.LatLngBounds(),
   geocoder: new google.maps.Geocoder(),
+  proxyVenue: function() {
+    return this.get('venue');
+  }.property(),
+  proxyCity: function() {
+    return this.get('city');
+  }.property(),
 
   initMap: function() {
     var geocoder = this.get('geocoder');
@@ -29,7 +35,33 @@ export default Ember.Component.extend({
 
   actions: {
     updateMap: function() {
-      console.log("shiet");
+      var self = this;
+      var geocoder = this.get('geocoder');
+      var places = new google.maps.places.PlacesService(this.get('map'));
+
+      geocoder.geocode({ 'address': this.get('proxyCity') }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+          self.get('map').setCenter(results[0].geometry.location);
+
+          var placeReq = {
+            location: results[0].geometry.location,
+            radius: 50000,
+            name: self.get('proxyVenue')
+          };
+          places.nearbySearch(placeReq, function(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+              var place = results[0];
+              var marker = new google.maps.Marker({
+                map: self.get('map'),
+                position: place.geometry.location
+              });
+              console.log('shit', place.geometry.location);
+              self.get('map').setCenter(place.geometry.location);
+              self.get('map').setZoom(10);
+            }
+          });
+        }
+      });
     }
   }
 });
