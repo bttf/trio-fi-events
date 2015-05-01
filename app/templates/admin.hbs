@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Admin</h1>
+  <hr>
+  <ul class="list-unstyled">
+    <li>
+      {{#link-to 'events.new'}}
+      <h2>{{fa-icon 'pencil-square-o'}} New Event</h2>
+      {{/link-to}}
+    </li>
+
+    <li>
+      {{#link-to 'venue.new'}}
+      <h2>{{fa-icon 'plus'}} New Venue</h2>
+      {{/link-to}}
+    </li>
+  </ul>
+</div>
+{{outlet}}

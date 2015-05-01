@@ -1,0 +1,27 @@
+<div class="container">
+  <ul class="list-inline">
+    <li>
+      <h1>Venues</h1>
+    </li>
+    <li>
+      {{#link-to 'venue.new'}}
+      {{fa-icon 'plus'}} New
+      {{/link-to}}
+    </li>
+  </ul>
+
+  <table class="table table-striped">
+    <tbody>
+      {{#each venue in model}}
+      <tr>
+        <td>{{venue.name}}</td>
+        <td>{{venue.address}}</td>
+        <td>{{venue.city}}</td>
+        <td>{{#link-to 'venue.edit' venue}}{{fa-icon 'pencil-square-o'}}{{/link-to}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</div>
+

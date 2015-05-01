@@ -14,6 +14,8 @@
     "qunit": "~1.17.1",
     "firebase": "^2.1.0",
     "bootstrap": "~3.3.4",
-    "ember-cli-moment-shim": "~0.1.0"
+    "ember-cli-moment-shim": "~0.1.0",
+    "eonasdan-bootstrap-datetimepicker": "~4.7.14",
+    "moment": "~2.10.2"
   }
 }

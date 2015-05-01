@@ -1,0 +1,45 @@
+<div class="container">
+  {{#link-to 'admin'}}
+  {{fa-icon "home"}} Home
+  {{/link-to}}
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>
+        New Event
+      </h1>
+
+      <form action="">
+        <div class="form-group">
+          <label for="eventDate">Date</label>
+          {{bs-datetimepicker date=model.event.date format='YYYY-MM-DD'}}
+        </div>
+
+        <div class="form-group">
+          <label for="eventArtists">Artists</label>
+          {{input id='eventArtists' class='form-control' type='text' value=model.event.artists}}
+        </div>
+
+        <div class="form-group">
+          <label for="eventVenue">Venue</label>
+          <select id="eventVenue" name="eventVenue">
+            {{#each venue in model.venues}}
+            <option value={{venue.id}}>{{venue.name}}</option>
+            {{/each}}
+          </select>
+          <div>
+            <a href='#' {{action 'toggleCreatingVenue'}}>{{fa-icon 'plus'}} Add Venue</a>
+          </div>
+        </div>
+      </form>
+
+    </div>
+    <div class="col-sm-6">
+      {{#if creatingVenue}}
+      {{#with model.newVenue as venue}}
+      {{mini-map venue=venue updateVenue='updateVenue'}}
+      {{/with}}
+      {{/if}}
+    </div>
+  </div>
+</div>

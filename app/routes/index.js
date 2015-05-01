@@ -8,11 +8,15 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       page: 0,
       limit: limit,
-      eventsLength: this.store.find('event').then(function(events) {
+      eventsLength: this.store.find('event', {
+        orderBy: 'dateSlug',
+        startAt: moment(new Date).format('L').replace(/\//g, '-')
+      }).then(function(events) {
         return events.get('length');
       }),
       events: this.store.find('event', {
-        orderBy: 'date'
+        orderBy: 'dateSlug',
+        startAt: moment(new Date).format('L').replace(/\//g, '-')
       }).then(function(events) {
         return events.slice(0, limit);
       })
