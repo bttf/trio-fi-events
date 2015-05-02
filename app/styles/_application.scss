@@ -1,0 +1,32 @@
+._application {
+  padding-top: 92px;
+
+  .app-header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    color: #333;
+    background-color: #FFF;
+    font-family: 'Open Sans', Georgia, sans-serif;
+    box-shadow: 0 10px 10px rgba(204, 204, 204, 0.3);
+
+    padding: 12px;
+
+    h1 {
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    img {
+      margin: 0 24px;
+      max-height: 64px;
+    }
+
+    img, h1 {
+      display: inline-block;
+    }
+  }
+}
