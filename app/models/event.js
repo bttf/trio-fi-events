@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 
 var attr = DS.attr;
+var moment = window.moment;
 
 export default DS.Model.extend({
   date: attr('date'),

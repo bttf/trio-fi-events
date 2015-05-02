@@ -17,8 +17,6 @@ export default Ember.Route.extend({
       events: this.store.find('event', {
         orderBy: 'dateSlug',
         startAt: moment(new Date).format('L').replace(/\//g, '-')
-      }).then(function(events) {
-        return events.slice(0, limit);
       })
     });
   }

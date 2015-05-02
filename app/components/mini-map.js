@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 var $ = Ember.$;
+var google = window.google;
 
 export default Ember.Component.extend({
   classNames: ['mini-map-wrapper'],
@@ -10,13 +11,12 @@ export default Ember.Component.extend({
   city: Ember.computed.alias('venue.city'),
   name: Ember.computed.alias('venue.name'),
   toggleSearchSpinner: function(toggle) {
+    var $btn = $('#searchBtn');
     if (toggle) {
-      var $btn = $('#searchBtn');
       $btn.width($btn.width());
       $btn.data('btnMsg', $btn.html());
       $btn.html('<i class="fa fa-spinner fa-pulse"></i>');
     } else {
-      var $btn = $('#searchBtn');
       $btn.html($btn.data('btnMsg'));
     }
   },

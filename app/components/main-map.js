@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 var $ = Ember.$;
+var google = window.google;
 
 export default Ember.Component.extend({
   classNames: ['main-map-wrapper'],
