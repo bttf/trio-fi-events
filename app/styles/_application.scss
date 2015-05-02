@@ -1,5 +1,5 @@
 ._application {
-  padding-top: 100px;
+  padding-top: 75px;
 
   .app-header {
     position: fixed;
@@ -13,7 +13,7 @@
     font-family: 'Open Sans', Georgia, sans-serif;
     box-shadow: 0 10px 10px rgba(204, 204, 204, 0.3);
 
-    padding: 12px;
+    padding: 8px;
 
     #headerTitle {
       margin: 0;
@@ -21,8 +21,8 @@
     }
 
     #imgLogo {
-      margin: 0 24px;
-      max-height: 64px;
+      margin: 0 12px 0 4px;
+      max-height: 48px;
     }
 
     #imgLogo, #headerTitle {
