@@ -4,23 +4,25 @@
   <div class="col-sm-2">
 
     {{#link-to 'date' event.dateSlug}}
-
     {{moment event.date 'L'}}
-
     {{/link-to}}
 
   </div>
   <div class="col-sm-4">
+
     {{#link-to 'event' event}}
     {{event.artists}}
     {{/link-to}}
+
   </div>
   <div class="col-sm-3">{{event.venue}}</div>
   <div class="col-sm-2">{{event.city}}</div>
   <div class="col-sm-1 edit-wrapper">
+
     {{#link-to 'event.edit' event}}
     {{fa-icon 'pencil-square-o'}}
     {{/link-to}}
+
   </div>
 </div>
 
