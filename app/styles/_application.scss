@@ -1,5 +1,5 @@
 ._application {
-  padding-top: 92px;
+  padding-top: 100px;
 
   .app-header {
     position: fixed;
@@ -27,6 +27,24 @@
 
     img, h1 {
       display: inline-block;
+    }
+  }
+
+  #loadingOverlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+
+    text-align: center;
+    background-color: #FFF;
+
+    i {
+      position: absolute;
+      top: 43%;
     }
   }
 }

@@ -10,9 +10,7 @@
   </div>
   <div class="col-sm-4">
 
-    {{#link-to 'event' event}}
-    {{event.artists}}
-    {{/link-to}}
+    <a href='#' {{action 'loadEvent' event}}>{{event.artists}}</a>
 
   </div>
   <div class="col-sm-3">{{event.venue}}</div>

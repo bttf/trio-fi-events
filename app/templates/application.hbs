@@ -1,9 +1,15 @@
 <div class="_application">
   <div class="app-header">
 
-    {{#link-to 'index'}}<img src="trio-fi-logo-small.png" alt="trio-fi logo">{{/link-to}}
+    {{#link-to 'index'}}<img id="imgLogo" src="trio-fi-logo-small.png" alt="trio-fi logo">{{/link-to}}
 
-    <h1>Trio-Fi Events Calendar</h1>
+    <h1 id="headerTitle">Trio-Fi Events Calendar</h1>
+
+    {{main-map selectedEvent=selectedEvent}}
+
+    <div id="loadingOverlay">
+      <i class="fa fa-cog fa-spin fa-2x"></i>
+    </div>
   </div>
 
   {{outlet}}
