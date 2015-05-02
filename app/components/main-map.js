@@ -16,14 +16,27 @@ export default Ember.Component.extend({
   }.observes('selectedEvent'),
 
   initMap: function() {
+    var height = 225;
+    var self = this;
     $('#loadingOverlay').fadeIn(200, function() {
       $('._application').animate({
-        paddingTop: 325
+        paddingTop: height + 25
       });
       $('.app-header').animate({
-        height: 300
+        height: height
+      }, function() {
+        //TODO: need to implement callback for when google maps is done loading/rendering
+        self.initGoogleMaps();
+        $('.main-map-wrapper').show(function() {
+          var map = self.get('map');
+          var center = map.getCenter();
+          google.maps.event.trigger(map, 'resize');
+          map.setCenter(center);
+          $('#loadingOverlay').fadeOut(200);
+        });
       });
     });
+    this.set('isMapVisible', true);
   },
 
   initGoogleMaps: function() {

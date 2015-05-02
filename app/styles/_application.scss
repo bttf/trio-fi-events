@@ -15,17 +15,17 @@
 
     padding: 12px;
 
-    h1 {
+    #headerTitle {
       margin: 0;
       vertical-align: middle;
     }
 
-    img {
+    #imgLogo {
       margin: 0 24px;
       max-height: 64px;
     }
 
-    img, h1 {
+    #imgLogo, #headerTitle {
       display: inline-block;
     }
   }
@@ -37,7 +37,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 2;
+    z-index: 3;
 
     text-align: center;
     background-color: #FFF;
