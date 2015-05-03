@@ -16,6 +16,7 @@
     "bootstrap": "~3.3.4",
     "ember-cli-moment-shim": "~0.1.0",
     "eonasdan-bootstrap-datetimepicker": "~4.7.14",
-    "moment": "~2.10.2"
+    "moment": "~2.10.2",
+    "ember-simple-auth": "0.8.0-beta.2"
   }
 }

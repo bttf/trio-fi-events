@@ -1,0 +1,17 @@
+<div class="_login container">
+  <h2>Login ya bum</h2>
+
+  <form class="login-form">
+    <div class="form-group">
+      <label for="loginEmail">E-Mail</label>
+      {{input id="loginEmail" type="text" class="form-control" value=email}}
+    </div>
+
+    <div class="form-group">
+      <label for="loginPassword">Password</label>
+      {{input id="loginPassword" type="password" class="form-control" value=password}}
+    </div>
+
+    <button class="btn btn-primary" {{action 'login' email password}}>Log In</button>
+  </form>
+</div>
