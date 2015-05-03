@@ -1,9 +1,11 @@
 <div class="_application">
   <div class="app-header">
 
-    {{#link-to 'index'}}<img id="imgLogo" src="trio-fi-logo-small.png" alt="trio-fi logo">{{/link-to}}
+    <div class="container">
+      {{#link-to 'index'}}<img id="imgLogo" src="trio-fi-logo-small.png" alt="trio-fi logo">{{/link-to}}
 
-    <h4 id="headerTitle">Trio-Fi Events Calendar</h4>
+      <h4 id="headerTitle">Trio-Fi Events Calendar</h4>
+    </div>
 
     {{main-map selectedEvent=selectedEvent}}
 

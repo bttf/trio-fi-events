@@ -16,7 +16,7 @@ export default Ember.Component.extend({
   }.observes('selectedEvent'),
 
   initMap: function() {
-    var height = 225;
+    var height = 300;
     var self = this;
     $('#loadingOverlay').fadeIn(200, function() {
       $('._application').animate({
