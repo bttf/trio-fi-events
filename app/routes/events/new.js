@@ -18,5 +18,6 @@ export default Ember.Route.extend({
   setupController: function(controller, model) {
     this._super(controller, model);
     controller.set('saved', '');
+    controller.set('selectedVenue', '');
   }
 });
