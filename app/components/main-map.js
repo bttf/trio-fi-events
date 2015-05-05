@@ -5,7 +5,6 @@ var google = window.google;
 
 export default Ember.Component.extend({
   classNames: ['main-map-wrapper'],
-  isMapVisible: false,
 
   map: {},
   bounds: new google.maps.LatLngBounds(),
@@ -15,14 +14,36 @@ export default Ember.Component.extend({
     if (!this.get('isMapVisible')) { this.initMap(); }
   }.observes('selectedEvent'),
 
+  closeMap: function() {
+    this.set('selectedEvent', '');
+
+    if (!this.get('isMapVisible')) {
+      var $app = $('._application');
+      var $appHeader = $('.app-header');
+      $('#mapToolbar').fadeOut();
+      $app.animate({
+        paddingTop: $app.data('origPadding')
+      });
+      $appHeader.animate({
+        height: $appHeader.data('origHeight')
+      }, function() {
+        $('.main-map-wrapper').fadeOut(200);
+      });
+    }
+  }.observes('isMapVisible'),
+
   initMap: function() {
     var height = 300;
     var self = this;
     $('#loadingOverlay').fadeIn(200, function() {
-      $('._application').animate({
+      var $app = $('._application');
+      var $appHeader = $('.app-header');
+      $app.data('origPadding', $app.css('paddingTop'));
+      $app.animate({
         paddingTop: height + 25
       });
-      $('.app-header').animate({
+      $appHeader.data('origHeight', $appHeader.css('height'));
+      $appHeader.animate({
         height: height
       }, function() {
         //TODO: need to implement callback for when google maps is done loading/rendering
@@ -32,6 +53,7 @@ export default Ember.Component.extend({
           var center = map.getCenter();
           google.maps.event.trigger(map, 'resize');
           map.setCenter(center);
+          $('#mapToolbar').show();
           $('#loadingOverlay').fadeOut(200);
         });
       });

@@ -18,10 +18,16 @@
       {{/if}}
     </div>
 
-    {{main-map selectedEvent=selectedEvent}}
+    {{main-map selectedEvent=selectedEvent isMapVisible=isMapVisible}}
 
     <div id="loadingOverlay">
       <i class="fa fa-cog fa-spin fa-2x"></i>
+    </div>
+
+    <div id="mapToolbar">
+      <div class="container">
+        <a href="#" {{action 'closeMap'}}>{{fa-icon 'times'}} Close Map</a>
+      </div>
     </div>
   </div>
 
