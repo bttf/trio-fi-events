@@ -2,26 +2,42 @@
 
 <div class="row event-row">
   <div class="col-sm-2">
+    <span class="date">
 
-    {{#link-to 'date' event.dateSlug}}
-    {{moment event.date 'L'}}
-    {{/link-to}}
+      {{#link-to 'date' event.dateSlug}}
+      {{moment event.date 'L'}}
+      {{/link-to}}
 
+    </span>
   </div>
   <div class="col-sm-4">
+    <span class="artists">
 
-    <a href='#' {{action 'loadEvent' event}}>{{event.artists}}</a>
+      <a href='#' {{action 'loadEvent' event}}>{{event.artists}}</a>
 
+    </span>
   </div>
-  <div class="col-sm-3">{{event.venue}}</div>
-  <div class="col-sm-2">{{event.city}}</div>
+  <div class="col-sm-3">
+    <span class="venue">
+
+      {{event.venue.name}}
+
+    </span>
+  </div>
+  <div class="col-sm-2">
+    <span class="city">
+
+      {{event.venue.city}}
+
+    </span>
+  </div>
   <div class="col-sm-1 edit-wrapper">
 
-    {{#if authStatus}}
-    {{#link-to 'event.edit' event}}
-    {{fa-icon 'pencil-square-o'}}
-    {{/link-to}}
-    {{/if}}
+  {{#if authStatus}}
+  {{#link-to 'events.edit' event}}
+  {{fa-icon 'pencil-square-o'}}
+  {{/link-to}}
+  {{/if}}
 
   </div>
 </div>

@@ -4,15 +4,12 @@
     <div class="container">
       {{#link-to 'index'}}<img id="imgLogo" src="trio-fi-logo-small.png" alt="trio-fi logo">{{/link-to}}
 
-      <h4 id="headerTitle">Trio-Fi Events Calendar</h4>
+      {{#link-to 'index'}}<h4 id="headerTitle">Trio-Fi Events Calendar</h4>{{/link-to}}
 
       {{#if session.isAuthenticated}}
       <ul class="list-inline admin-list">
         <li>
           {{#link-to 'events.new'}}<h4>{{fa-icon 'plus'}}</h4>{{/link-to}}
-        </li>
-        <li>
-          {{#link-to 'venue.new'}}<h4>{{fa-icon 'fa-pencil-square-o'}}</h4>{{/link-to}}
         </li>
         <li>
           <a href="#" {{action 'logout'}}><h4>{{fa-icon 'sign-out'}}</h4></a>

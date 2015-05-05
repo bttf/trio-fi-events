@@ -1,45 +1,72 @@
-<div class="container">
-  {{#link-to 'admin'}}
-  {{fa-icon "home"}} Home
-  {{/link-to}}
+<div class="_events_new container">
+  <div class="row">
+    <div class="col-sm-12">
+      <ul class="list-inline">
+        <li>
+          <h4>
+            {{#if model.date}}
+            {{moment model.date 'L'}}
+            {{/if}}
+          </h4>
+          <h1>
+            {{#if model.artists}}
+            {{model.artists}}
+            {{else}}
+            New Event
+            {{/if}}
+          </h1>
+          <h3>
+            {{#if selectedVenue}}
+            @ {{selectedVenue.name}}, {{selectedVenue.city}}
+            {{/if}}
+          </h3>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-sm-6">
-      <h1>
-        New Event
-      </h1>
-
       <form action="">
         <div class="form-group">
           <label for="eventDate">Date</label>
-          {{bs-datetimepicker date=model.event.date format='YYYY-MM-DD'}}
-        </div>
 
+          {{bs-datetimepicker value=model.date date=model.date format='YYYY-MM-DD'}}
+
+        </div>
         <div class="form-group">
           <label for="eventArtists">Artists</label>
-          {{input id='eventArtists' class='form-control' type='text' value=model.event.artists}}
+
+          {{input id='eventArtists' class='form-control' type='text' value=model.artists}}
+
         </div>
 
         <div class="form-group">
           <label for="eventVenue">Venue</label>
-          <select id="eventVenue" name="eventVenue">
-            {{#each venue in model.venues}}
-            <option value={{venue.id}}>{{venue.name}}</option>
-            {{/each}}
-          </select>
-          <div>
-            <a href='#' {{action 'toggleCreatingVenue'}}>{{fa-icon 'plus'}} Add Venue</a>
-          </div>
-        </div>
-      </form>
 
+            {{view 'select' 
+            id='eventVenue'
+            class='form-control'
+            content=model.venues
+            optionValuePath='content.id'
+            optionLabelPath='content.name'
+            selection=selectedVenue}}
+
+          <a href='#' {{action 'toggleCreatingVenue'}}><h4>{{fa-icon 'plus'}} Add Venue</h4></a>
+        </div>
+
+        <button id="saveEventBtn" class="btn btn-primary" {{action 'saveEvent' model}}>Save Event</button>
+        {{#if saved}}
+        <div class="saved-msg text-success">{{saved}}</div>
+        {{/if}}
+      </form>
     </div>
     <div class="col-sm-6">
+
       {{#if creatingVenue}}
-      {{#with model.newVenue as venue}}
-      {{mini-map venue=venue updateVenue='updateVenue'}}
-      {{/with}}
+      {{mini-map venue=model.newVenue saveVenue='saveVenue'}}
       {{/if}}
+
     </div>
   </div>
 </div>

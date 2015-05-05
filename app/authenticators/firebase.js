@@ -33,16 +33,8 @@ export default Base.extend({
 
   invalidate: function(data) {
     return new Ember.RSVP.Promise(function (resolve, reject) {
-      var unauthCallback = function(authData) {
-        ref.offAuth(unauthCallback);
-        if (authData === null) {
-          resolve();
-        } else {
-          reject();
-        }
-      };
-      ref.onAuth(unauthCallback);
       ref.unauth();
+      resolve();
     });
   }
 });

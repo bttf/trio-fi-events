@@ -13,6 +13,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       });
     },
     logout: function() {
+      console.log('click registered');
       this.get('session').invalidate('authenticator:firebase');
     }
   }

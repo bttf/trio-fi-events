@@ -10,6 +10,7 @@ export default Ember.Component.extend({
   geocoder: new google.maps.Geocoder(),
   city: Ember.computed.alias('venue.city'),
   name: Ember.computed.alias('venue.name'),
+  address: Ember.computed.alias('venue.address'),
   toggleSearchSpinner: function(toggle) {
     var $btn = $('#searchBtn');
     if (toggle) {
@@ -41,6 +42,10 @@ export default Ember.Component.extend({
   }.on('didInsertElement'),
 
   actions: {
+    saveVenue: function(venue) {
+      this.sendAction('saveVenue', venue);
+    },
+
     updateMap: function() {
       var self = this;
       var geocoder = this.get('geocoder');

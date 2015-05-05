@@ -12,14 +12,18 @@ export default Router.map(function() {
   this.resource('event', { path: '/event/:id' }, function() {
     this.route('edit', { path: '/edit' });
   });
+
   this.route('venue', function() {
     this.route('edit');
     this.route('new');
   });
+
   this.route('admin');
 
   this.route('events', function() {
     this.route('new');
+    this.route('edit', { path: '/:id/edit' });
   });
+
   this.route('login');
 });
