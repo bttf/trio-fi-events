@@ -6,12 +6,6 @@ export default Ember.Route.extend({
 
   model: function(params) {
     return this.store.find('event', params.id);
-
-    // return new Ember.RSVP.hash({
-    //   event: this.store.find('event', params.id),
-    //   venues: this.store.find('venue'),
-    //   newVenue: ''
-    // });
   },
 
   afterModel: function(model) {
@@ -22,6 +16,7 @@ export default Ember.Route.extend({
   setupController: function(controller, model) {
     this._super(controller, model);
     controller.set('saved', '');
-    controller.set('selectedVenue', model.get('event.venue'));
+    controller.set('creatingVenue', false);
+    controller.set('selectedVenue', model.get('venue'));
   }
 });

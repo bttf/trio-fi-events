@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-  actions: {
-  }
+export default Ember.ArrayController.extend({
+  sortProperties: ['date'],
+  sortAscending: true
 });

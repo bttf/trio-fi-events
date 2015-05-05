@@ -18,6 +18,7 @@ export default Ember.Controller.extend({
       venue.save().then(function() {
         console.log('saved');
         self.set('selectedVenue', venue);
+        self.get('model.venues').addObject(venue);
         self.set('model.newVenue', self.store.createRecord('venue'));
       });
     },
