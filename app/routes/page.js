@@ -2,6 +2,7 @@ import Ember from 'ember';
 import ENV from 'trio-fi-events/config/environment';
 
 var limit = ENV.APP.pageLimit;
+var moment = window.moment;
 
 export default Ember.Route.extend({
   renderTemplate: function(controller, model) {
@@ -18,13 +19,13 @@ export default Ember.Route.extend({
       limit: limit,
       eventsLength: this.store.find('event', {
         orderBy: 'dateSlug',
-        startAt: moment(new Date).format('L').replace(/\//g, '-')
+        startAt: moment(new Date()).format('L').replace(/\//g, '-')
       }).then(function(events) {
         return events.get('length');
       }),
       events: this.store.find('event', {
         orderBy: 'dateSlug',
-        startAt: moment(new Date).format('L').replace(/\//g, '-')
+        startAt: moment(new Date()).format('L').replace(/\//g, '-')
       }).then(function(events) {
         var startAt = page * limit;
         var endAt = (page * limit) + limit;

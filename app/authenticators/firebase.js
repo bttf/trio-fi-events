@@ -5,7 +5,7 @@ import ENV from 'trio-fi-events/config/environment';
 var ref = new window.Firebase(ENV.firebase);
 
 export default Base.extend({
-  restore: function(data) {
+  restore: function() {
     return new Ember.RSVP.Promise(function (resolve, reject) {
       var authData = ref.getAuth();
       if (authData) {
@@ -31,8 +31,8 @@ export default Base.extend({
     });
   },
 
-  invalidate: function(data) {
-    return new Ember.RSVP.Promise(function (resolve, reject) {
+  invalidate: function() {
+    return new Ember.RSVP.Promise(function (resolve) {
       ref.unauth();
       resolve();
     });

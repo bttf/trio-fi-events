@@ -3,7 +3,7 @@
   <form action="">
     <div class='form-group'>
       <label for="venueInput">Venue Name (required)</label>
-      {{input id='venueInput' class='form-control' type='text' value=name}}
+      {{input id='venueInput' class='form-control' type='text' value=name placeholder="Churchill's"}}
     </div>
 
     <div class='form-group'>
@@ -12,8 +12,8 @@
     </div>
 
     <div class='form-group'>
-      <label for="cityInput">City (required)</label>
-      {{input id='cityInput' class='form-control' type='text' value=city}}
+      <label for="cityInput">City, State (required)</label>
+      {{input id='cityInput' class='form-control' type='text' value=city placeholder="Miami, FL"}}
     </div>
 
     <button id='searchBtn' type='submit' class='btn btn-success' {{action 'updateMap'}}>Search</button>

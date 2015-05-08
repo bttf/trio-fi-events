@@ -1,7 +1,4 @@
 import Ember from 'ember';
-import ENV from 'trio-fi-events/config/environment';
-
-var limit = ENV.APP.pageLimit;
 
 export default Ember.Route.extend({
   model: function() {
